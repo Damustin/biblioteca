@@ -1,0 +1,29 @@
+{% extends 'layout.html'%}
+
+
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="d-grid">
+            <input class="px-3 opacity-25 m-2" type="text" name="username" placeholder="Nombre">
+            <input class="px-3 opacity-25 m-2" type="password" name="password" placeholder="Contraseña">
+            <button class="btn btn-dark btn-sm m-2" type="submit">Iniciar sesión</button>
+            <a class="btn btn-dark btn-sm m-2" href="/registro">Quiero Registrarme</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+
+
+<!-- <div class="container row">
+    <form class="d-grid" method="POST">
+        {% csrf_token %}
+        <input class="px-3 opacity-25 m-2" type="text" name="username" placeholder="email">
+        <input class="px-3 opacity-25 m-2" type="password" name="password" placeholder="contraseña">
+        <button class="btn btn-dark btn-sm m-2" type="submit">Iniciar sesión</button>
+        <a class="btn btn-dark btn-sm m-2">Quiero Registrarme</a>
+    </form>
+</div> -->

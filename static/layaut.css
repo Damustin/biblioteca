@@ -1,0 +1,33 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@1&display=swap');
+
+*{
+    font-family: 'Libre Bodoni', serif;
+}
+body{
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(/static/books.png);
+    color: white;
+}
+
+.title{
+    color:#fff !important ;
+   
+    margin-top: 6px;
+}
+h1:hover{
+    color : #f2a847!important;
+    
+}
+
+.cate{
+    background-color:aqua;
+
+}
+
+
+

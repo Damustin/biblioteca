@@ -1,0 +1,39 @@
+{% extends 'layout.html'%}
+
+{% load static %}
+
+
+
+{% block content %}
+<div class="text-center mb-3">
+  <h2>{{ categoria }}</h2>
+</div>
+
+{% for i in libros %}
+
+
+
+<div class="card mb-3 bg-transparent border-0" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4 mt-2">
+      <img src="{{i.img.url}}" class="img-fluid rounded-start" alt="{{i.titulo}}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title text-light">{{i.titulo}}</h5>
+        <h5 class="card-title text-light">{{i.autor}}</h5>
+        <p class="card-text text-light">{{i.descripcion|truncatechars:100}}</p>
+        <p class="card-text"><small class="text-body-secondary">{{i.año}}</small></p>
+        <form method="POST" >
+          {% csrf_token %}
+          <input type="hidden" name="libro_id" value="{{ i.id }}">
+          <button type="submit" class="btn btn-outline-warning btn-sm">Alquilar</button>
+      </form>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+{% endblock %}

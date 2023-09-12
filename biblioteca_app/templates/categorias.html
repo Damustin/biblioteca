@@ -1,0 +1,23 @@
+
+
+{% extends 'layout.html' %}
+
+
+
+
+
+
+{% block content %}
+{% if usuario.is_authenticated %}
+<div class="row text-center">
+    <h2>Que quieres leer hoy, {{ usuario.username }}.</h2>
+</div>
+{% else %}
+    <p>No has iniciado sesión.</p>
+{% endif %}
+{% for i in categoria %}
+<div class="row justify-content-center align-items-center m-4 opacity-25">
+ <a href="{% url 'mostrar_categoria' categoria_id=i.id %}"  class="btn cate btn-sm" ><strong>{{ i.nombre }}</strong></a>
+</div>
+{% endfor %}
+{% endblock %}
